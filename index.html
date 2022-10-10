@@ -155,26 +155,6 @@
 			</form>
 		</div>
 	</section> 
-	<script>
-        $("#contact-form").submit((e)=>{
-            e.preventDefault()
-            $.ajax({
-                url:"https://script.google.com/macros/s/AKfycbzC4PcSoebpn5eds8EsgezvxVOy6ZeVKPBTUSuHl3H0jZSqL8kiHFT_4P22F1yifmVD/exec",
-                data:$("#contact-form").serialize(),
-                method:"post",
-                success:function (response){
-                    alert("Thank You :) See You Soon...")
-                    window.location.reload()
-                    //window.location.href="https://google.com"
-                },
-                error:function (err){
-                    alert("Something Error! Please Try Again")
-    
-                }
-            })
-        })
-    </script>
-
 
 	<script type="text/javascript" src="script.js"></script>
 </body>
