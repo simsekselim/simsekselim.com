@@ -1,9 +1,0 @@
-[{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target": {
-    "namespace": "android_app",
-    "package_name": "com.simsekselim.simsekselim",
-    "sha256_cert_fingerprints":
-    ["CA:E4:3A:C6:02:C1:27:B4:9D:84:5D:66:D1:F5:90:7E:FD:E1:8E:F9:24:6E:51:DE:8B:4A:AE:E8:8A:EC:38:95"]
-  }
-}]
