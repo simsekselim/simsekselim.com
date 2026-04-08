@@ -1,4 +1,23 @@
-let projects = [];
+const projects = [
+  {
+    title: 'Codever',
+    description: 'A project focused on coding practice and learning.',
+    image: 'images/codever.png',
+    link: '#'
+  },
+  {
+    title: 'Play Off',
+    description: 'A game project built for fun and experimentation.',
+    image: 'images/play_off.png',
+    link: '#'
+  },
+  {
+    title: 'Fodamy',
+    description: 'A food-focused project where you can check it out.',
+    image: 'images/fodamy.png',
+    link: '#'
+  }
+];
 
 let theme = localStorage.getItem('theme')
 
@@ -19,12 +38,8 @@ for (var i=0; themeDots.length > i; i++){
 	})
 }
 
-fetch('https://codexall-7ec9f-default-rtdb.firebaseio.com/projects.json')
-  .then(response => response.json())
-  .then(data => {
-    projects = data;
-    renderProjects();
-  });
+renderProjects();
+initSwipeHintOnScroll();
 
 
 
@@ -98,6 +113,27 @@ function renderProjects() {
   });
 }
 
+function initSwipeHintOnScroll() {
+  const slider = document.querySelector('.post-slider');
+  if (!slider || !window.IntersectionObserver) {
+    return;
+  }
+
+  const isMobile = window.matchMedia('(max-width: 800px)');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && isMobile.matches && !reduceMotion.matches) {
+        slider.classList.add('animate-hint');
+        obs.disconnect();
+      }
+    });
+  }, { threshold: 0.35 });
+
+  observer.observe(slider);
+}
+
 (function (c, l, a, r, i, t, y) {
   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
   t = l.createElement(r);
@@ -106,5 +142,3 @@ function renderProjects() {
   y = l.getElementsByTagName(r)[0];
   y.parentNode.insertBefore(t, y);
 })(window, document, "clarity", "script", "u3t8v6eoz5");
-
-
