@@ -3,19 +3,19 @@ const projects = [
     title: 'Codever',
     description: 'A project focused on coding practice and learning.',
     image: 'images/codever.png',
-    link: '#'
+    link: 'https://play.google.com/store/apps/details?id=com.simsekselim.codever&hl=tr'
   },
   {
     title: 'Play Off',
     description: 'A game project built for fun and experimentation.',
     image: 'images/play_off.png',
-    link: '#'
+    link: 'https://play.google.com/store/apps/details?id=com.simsekselim.playoff&hl=tr'
   },
   {
     title: 'Fodamy',
     description: 'A food-focused project where you can check it out.',
     image: 'images/fodamy.png',
-    link: '#'
+    link: 'https://github.com/simsekselim/SimsekFodamy/tree/develop'
   }
 ];
 
